@@ -1,6 +1,9 @@
 """Builds index.html (the link-in-bio page of social.bigbangpixels.store) from the shop's live Etsy sections.
 
     python build.py            refresh the section list and counts from Etsy's public API, write index.html
+    python build.py --publish  the same, then commit and push it (GitHub Pages updates in a minute or two)
+
+Run by Pinterest Scheduler/social_queue.py schedule (every scheduling round), so new sections and counts appear.
 
 Empty sections are left out. Etsy credentials: the Pinterest Scheduler's etsy.py (ETSY_KEYSTRING, read-only, public
 data). privacy.html and terms.html are written by hand (they back the Big Bang Pixels TikTok app).
@@ -15,6 +18,7 @@ import etsy  # noqa: E402
 
 SHOP = "https://www.etsy.com/shop/BigBangPixelsShop"
 SOCIAL = [
+    ("TikTok", "https://www.tiktok.com/@bigbangpixels"),
     ("Instagram", "https://www.instagram.com/bigbangpixels/"),
     ("Pinterest", "https://www.pinterest.com/bigbangpixels/"),
     ("YouTube", "https://www.youtube.com/channel/UCW3EMFFRzCJnyKkC5wH3Jdw"),
@@ -80,3 +84,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    if "--publish" in sys.argv:
+        import tiktok_bbp
+        tiktok_bbp.publish_site("Link page: Etsy sections refreshed", ["index.html"])
+        print("published https://social.bigbangpixels.store/")
