@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Connected | Big Bang Pixels</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+<article class="doc">
+<h1>TikTok sign-in</h1>
+<p id="msg">Reading the answer from TikTok...</p>
+<p>Copy the whole address of this page from your browser's address bar and paste it back into the Big Bang
+Pixels setup. Nothing is stored on this site.</p>
+</article>
+</main>
+<script>
+  // OAuth redirect target of the Big Bang Pixels TikTok app (Login Kit). The page only shows whether TikTok sent a
+  // code; the setup script on the PC reads the code from the pasted URL and exchanges it. No data leaves the browser.
+  const p = new URLSearchParams(location.search);
+  const msg = document.getElementById("msg");
+  if (p.get("code")) msg.textContent = "TikTok sent an authorization code.";
+  else if (p.get("error")) msg.textContent = "TikTok returned an error: " + (p.get("error_description") || p.get("error"));
+  else msg.textContent = "No code in this address.";
+</script>
+</body>
+</html>
