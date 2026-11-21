@@ -1,0 +1,40 @@
+name: TikTok publisher
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # every hour; the runner sends at most one due draft per run
+  workflow_dispatch:
+    inputs:
+      check:
+        description: "Only check the TikTok connection"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tiktok-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Send due drafts
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+        run: python _social/runner.py ${{ inputs.check && '--check' || '' }}
+      - name: Save results
+        run: |
+          git config user.name "Big Bang Pixels publisher"
+          git config user.email "noreply@bigbangpixels.store"
+          git add _social/tiktok.json
+          git diff --cached --quiet || (git commit -m "TikTok publisher: results" && git pull --rebase && git push)

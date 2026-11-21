@@ -1,2 +1,5 @@
 User-agent: *
 Disallow: /tiktok/
+Disallow: /_social/
+Disallow: /connect.html
+Disallow: /callback.html
