@@ -12,7 +12,10 @@
    "tiktok/20261122-beanie-bad-bishop/03-09193574.jpg",
    "tiktok/20261122-beanie-bad-bishop/04-29b1ac37.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7711067276682463254",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-22T18:40:07+00:00"
  },
  {
   "id": "20261123-desk-mat-retro-waves",
