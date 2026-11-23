@@ -31,7 +31,10 @@
    "tiktok/20261123-desk-mat-retro-waves/04-8da94a3a.jpg",
    "tiktok/20261123-desk-mat-retro-waves/05-dbfcf531.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7711428525185697814",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-23T18:01:10+00:00"
  },
  {
   "id": "20261124-beanie-lipstick-low-end",
