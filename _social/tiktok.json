@@ -49,7 +49,10 @@
    "tiktok/20261124-beanie-lipstick-low-end/03-469499ff.jpg",
    "tiktok/20261124-beanie-lipstick-low-end/04-a62a977f.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7711791831121545238",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-24T17:30:59+00:00"
  },
  {
   "id": "20261125-beanie-cymbal-of-power",
