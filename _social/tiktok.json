@@ -67,7 +67,10 @@
    "tiktok/20261125-beanie-cymbal-of-power/03-7068da20.jpg",
    "tiktok/20261125-beanie-cymbal-of-power/04-b4adfaeb.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7712166655962777602",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-25T17:45:42+00:00"
  },
  {
   "id": "20261126-beanie-i-play-dirty",
