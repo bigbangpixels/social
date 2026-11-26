@@ -85,7 +85,10 @@
    "tiktok/20261126-beanie-i-play-dirty/03-9e2d7ef3.jpg",
    "tiktok/20261126-beanie-i-play-dirty/04-c4d48a20.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7712541758126688278",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-26T18:01:09+00:00"
  },
  {
   "id": "20261127-beanie-bass-witch",
