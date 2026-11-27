@@ -103,7 +103,10 @@
    "tiktok/20261127-beanie-bass-witch/03-2bae7ab2.jpg",
    "tiktok/20261127-beanie-bass-witch/04-f6ba4ee5.jpg"
   ],
-  "status": "queued"
+  "status": "sent",
+  "publish_id": "p_inbox_url~v2.7712905106089854998",
+  "tiktok_status": "SEND_TO_USER_INBOX",
+  "sent_at": "2026-11-27T17:31:06+00:00"
  },
  {
   "id": "20261128-beanie-ratamacue",
